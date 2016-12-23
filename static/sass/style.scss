@@ -36,6 +36,18 @@
   z-index: 100;
 }
 
+.nav-bar-inner {
+  -webkit-display: inline-flex;
+  -moz-display: inline-flex;
+  display: inline-flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 5px 1rem 5px 0;
+  background: white;
+}
+
 .nav-link {
   flex-grow: 1;
   padding: 1em 0;
@@ -57,6 +69,13 @@
   padding-left: 1rem;
 }
 
+.mc-closeModal{
+  text-shadow:-1px -1px 0 #000,
+               1px -1px 0 #000,
+               -1px 1px 0 #000,
+                1px 1px 0 #000;
+}
+
 .main-content {
   margin-top: 4rem;
 }
@@ -68,7 +87,8 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/woman-computer.jpg) $main-blue no-repeat top right fixed;
+  background: url(../img/women-library-min.jpg) $main-blue no-repeat top right fixed;
+  background-size: cover;
 }
 
 .main-header__text {
@@ -81,6 +101,17 @@
   width: 100%;
 }
 
+.fixed-img {
+  width:30%;
+  position:fixed;
+  top:150px;
+}
+
+.hiring {
+  width: 4.5rem;
+  margin: 0.5rem;
+}
+
 .social-media {
   width: 3rem;
   margin: 0.5rem;
@@ -89,14 +120,14 @@
 .contact-us,
 .donate {
   @include prefix(border-radius, 8px, webkit moz o);
-
+  color: white;
   display: inline-block;
-  background-color: $main-blue;
-  color: $white;
+  background-color: $focal-orange;
   text-align: center;
 
   &:hover {
     background-color: $light-blue;
+    color: white;
     transition: .3s;
   }
 }
@@ -104,15 +135,6 @@
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
-}
-
-.donate {
-  margin: 0 0.25em;
-  padding: 0.75em 0.5em;
-
-  &:hover {
-    color: $white;
-  }
 }
 
 .hidden-lg {
@@ -129,7 +151,8 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+
+@media only screen and (max-width: 910px) {
   .row {
     padding: 1.5em 1em;
   }
@@ -138,30 +161,10 @@
     @include prefix(flex, 0 0 40%, webkit moz o);
   }
 
-  h1 {
-    font-size: 3em;
-  }
-
-  .main-header {
-    display: block;
-    position: relative;
-    height: 90vh;
-    background: url(../img/woman-computer.jpg) $main-blue no-repeat top center fixed;
-  }
-
-  .main-header__text {
-    position: absolute;
-    bottom: 0;
-    max-width: 100%;
-    width: 100%;
-  }
-
   .hidden-med {
     display: none;
   }
-}
 
-@media only screen and (max-width: 670px) {
   .column {
     @include prefix(flex, 0 0 100%, webkit moz o);
   }
@@ -170,6 +173,16 @@
     font-size: 2em;
     letter-spacing: 0.5px;
   }
+
+  .donate {
+    @include prefix(border-radius, 0px, webkit moz o);
+    color: $focal-orange;
+    &:hover {
+      background-color: $focal-orange;
+      color: white;
+    }
+  }
+
 
   .nav-bar {
     justify-content: space-between;
@@ -198,27 +211,30 @@
     background-color: $white;
     text-align: center;
     min-height: 1.4em;
+    z-index: 1
   }
 
-  .nav-link--mobile:nth-last-child(4) {
+  .nav-link--mobile:last-child {
     border-bottom: 1px solid $light-gray;
   }
 
-  .nav-link--mobile:nth-last-child(1) {
-    margin-top: 5rem;
-  }
-
-  .main-content {
-    margin-top: 0;
-  }
-
   .main-header {
-    height: 100vh;
+    display: block;
+    position: relative;
+    background: url(../img/women-library-min.jpg) $main-blue no-repeat top center;
+    @include prefix(background-size, contain, webkit moz o);
   }
 
   .main-header__text {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
     width: auto;
     padding: 0 1em;
+  }
+
+  .main-content {
+    margin-top: 5rem;
   }
 
   .hidden-sm {
@@ -239,11 +255,11 @@
     cursor: pointer;
     user-select: none;
     border-radius: $button-size/7;
-   
+
     &:hover {
       opacity: 1;
     }
-   
+
     &:active {
       transition: 0;
       background: rgba(0,0,0,.1);
@@ -254,7 +270,7 @@
     //create middle line
     @include line;
     position: relative;
-   
+
     /*create the upper and lower lines as pseudo-elements of the middle line*/
     &:before, &:after {
      @include line;
@@ -269,7 +285,7 @@
 
   .lines-button:hover {
     opacity: 1;
-       
+
     .lines {
       &:before { top: $button-size/3; }
       &:after { top: -$button-size/3; }
@@ -279,14 +295,14 @@
   .lines-button.x.close .lines {
     /*hide the middle line*/
     background: transparent;
- 
+
     /*overlay the lines by setting both their top values to 0*/
     &:before, &:after {
       transform-origin: 50% 50%;
       top: 0;
-      width: $button-size;
+      width: 2.5em;
     }
- 
+
     // rotate the lines to form the x shape
     &:before{
       transform: rotate3d(0,0,1,45deg);
@@ -295,10 +311,75 @@
       transform: rotate3d(0,0,1,-45deg);
     }
   }
-}
-
-@media only screen and (max-width: 480px) {
   .contact-us {
     display: block;
   }
+
+  .nav-bar-inner {
+    padding: 0;
+    margin-top: 5rem;
+  }
+}
+
+/* iphone 4 and 4s media query */
+@media only screen and (min-device-width: 320px)
+  and
+  (max-device-width: 480px)
+  and
+  (-webkit-device-pixel-ratio: 2)
+  and
+  (device-aspect-ratio: 2/3){
+    .main-header__text{
+      font-size: 1rem;
+      height: 50vh;
+    }
+}
+
+/* iphone 4 and 4s landscape media query */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+  .main-header{
+    background-size: cover;
+    font-size: 14px;
+  }
+  .main-content{
+    font-size: 14px;
+  }
+}
+
+/* Samsung Galaxy s5 portrait media query */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .main-header__text{
+      font-size: 1rem;
+      height: 30vh;
+    }
+    .main-header_text p{
+      margin-bottom: 20px;
+    }
+    .main-header{
+        height: 420px;
+    }
+}
+
+/* Samsung Galaxy s5 landscape media query */
+@media screen
+  and (device-width: 640px)
+  and (device-height: 360px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    .main-header__text{
+      font-size: 1rem;
+      height: 50vh;
+    }
+    .main-header{
+        height: 500px;
+        background-size: cover;
+    }
 }

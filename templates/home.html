@@ -4,20 +4,12 @@
   Techtonica
 {% endblock title %}
 
-{% block nav %}
-  <a href="{{ url_for('render_about_page') }}" class="aboutus nav-link">About</a>
-  <a href="#howtohelp" class="howtohelp nav-link">How to Help</a>
-  <a href="#howitworks" class="howitworks nav-link">How It Works</a>
-  <a href="#why" class="why nav-link">Why</a>
-  <a href="#whatwedo" class="whatwedo nav-link">What We Do</a>
-{% endblock nav %}
-
 {% block content %}
   <div class="main-content">
       <div class="main-header">
         <div class="main-header__text blue-background">
           <h1>Techtonica</h1>
-          <p>Free tech training and job placement for low-income women and non-binary adults</p>
+          <p>Free tech training with living and childcare stipends and job placement for low-income women and non-binary adults. #BridgeTheTechGap</p>
         </div>
       </div>
       <div class="row row__center what-we-do" id="whatwedo">
@@ -62,17 +54,55 @@
           <h1>How to Help</h1>
           <p class="justify">
             <ul>
-              <li>Encourage your company to sponsor and hire students.</li>
-              <li>Contribute to <a href="https://github.com/Techtonica/curriculum">our open-source curriculum</a>.</li>
+              <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link target="_blank">sign up to sponsor and hire students</a>.</li>
+              <li><a href="https://goo.gl/forms/jgD3BWCEg5RN8XwN2" class="hover-link target="_blank">Sign up to volunteer</a>.</li>
               <li>Offer your space for the first six-month class in San Francisco.</li>
-              <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" target="_blank">Donate</a> (donations are tax-deductible).</li>
+              <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="hover-link target="_blank">Donate</a> (donations are tax-deductible and you can sign up to donate monthly).</li>
             </ul>
           </p>
-          <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter nav-link pad-lv3 pad-tb0" href="#" onclick="openPopupForm(); return false;">sign up for our newsletter</a>.</p>
+          <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter pad-lv3 pad-tb0" href="#" onclick="openPopupForm(); return false;">sign up for our newsletter</a>.</p>
         </div>
         <div class="column">
           <img src="{{ url_for('static', filename='img/TTLRailsGroup-min.jpg') }}" alt="group of workshop attendees and volunteers" class="full-width-img">
         </div>
       </div>
+      <div class="row row__center our-supporters" id="supporters">
+        <div class="column">
+          <h1 class="blue-h1">Supporters</h1>
+        </div>
+        <div class="column">
+          <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/SFPL_Logo.jpg') }}" alt="san francisco public library" class="full-width-img">
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/rackspace-startups-logo.png') }}" alt="rackspace" class="full-width-img">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/StAnthonys.png') }}" alt="st. anthonys" class="full-width-img">
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/ZendeskLogo.png') }}" alt="zendesk" class="full-width-img">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/PythonSoftwareFoundationLogo.png') }}" alt="python" class="full-width-img">
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/KaporCenterForSocialImpactLogo.png') }}" alt="kapor" class="full-width-img">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/scienceexchange_logo.png') }}" alt="science exchange" class="full-width-img">
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/BRIDGE_AT_MAIN.jpg') }}" alt="bridge at main" class="full-width-img">
+            </div>
+          </div>
+        </div>
+      </div>
 {% endblock content %}
-

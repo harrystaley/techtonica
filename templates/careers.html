@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Techtonica
+{% endblock title %}
+
+{% block content %}
+  <div class="row row__center about-us">
+    <div class="column hidden-med">
+      <img src="{{ url_for('static', filename='img/library-lab-workshop-2-min.jpg') }}"  alt="techtonica logo shape" class="fixed-img">
+    </div>
+    <div class="column">
+      <h1 class="blue-h1">Join our team!</h1>
+      <p class="justify">Techtonica is a new nonprofit that offers low-income women and non-binary adults free tech training, along with living and childcare stipends, then places them in positions at sponsoring companies that are ready to support more diverse teams. You can <a href="https://medium.com/@michelleglauser/techtonica-how-to-diversify-tech-and-help-neighbors-in-need-837d5f0b40bc">read more here</a>.</p>
+
+		<h3>Full-time Instructor—San Francisco Bay Area—$90,000+</h3>
+		<p class="justify">
+		Techtonica is currently seeking our first full-time instructor in San Francisco. The salary goal is $90,000 or more, with less to start while we find sponsors to contribute. We can offer benefits if needed, but unfortunately at this time we can't offer a visa or relocation assistance. This role is from 9-6 M-F, ~1 evening per week, and 1-2 Saturdays per month.</p>
+
+
+		<p class="justify">Our students are low-income women and non-binary femme adults and 71% people of color. We are seeking an instructor who can relate to the target audience on as many levels as possible.</p>
+
+
+		<p class="justify">We’re looking for:
+		<ul>
+			<li>Prior experience teaching and developing curriculum, with an open mind about methods</li>
+			<li>At least 2 years of professional experience in web development</li>
+			<li>Belief that anyone can learn anything</li>
+			<li>Confidence that you can figure out anything and instill that confidence in students</li>
+			<li>Ability to keep students focused and inspired</li>
+			<li>Clear, transparent, compassionate communication</li>
+			<li>Being woke, and passionate and informed about social justice and diversity-and-inclusion-in-tech issues</li>
+			<li>Understanding of socioeconomic differences and experiences that class straddlers face</li>
+			<li>Unequivocal support for parents, people who don't identify with the gender binary, and people with disabilities</li>
+			<li>Patience</li>
+			<li>Dedication to underprivileged populations and willingness to examine your biases often</li>
+			<li>Willingness to do pretty much anything—we are a brand-new nonprofit that works much like a tech startup</li>
+			<li>Ability to handle many different projects and tasks simultaneously</li>
+			<li>Ability to take things and run with them independently</li>
+		</ul>
+		</p>
+
+
+		<p class="justify">This role is very exciting as you'll be our sole paid instructor for our inaugural full-time class of five students and will play a fundamental role in formulating an amazing program. This exciting role will include:
+		<ul>
+			<li>Working closely with the well-connected founder on the program vision</li>
+			<li>Organizing one-day workshops with local organizations to find students and build community partnerships</li>
+			<li>Refining our vetting process for full-time students</li>
+			<li>Collaborating on designing and implementing project-based curriculum with sponsoring companies</li>
+			<li>Managing workshop volunteers and mentors</li>
+			<li>Teaching with a focus on empowering students so they can succeed long-term</li>
+		</ul>
+		</p>
+
+		<p class="justify">Because this role involves a lot of people-interacting, it might be best if you're extroverted or at least an ambivert, but you should also respect the space needed by introverts, especially since you'll be working closely with the founder, who is an introvert.</p>
+
+		<p class="justify">
+			See <a href="https://github.com/Techtonica/curriculum/blob/master/README.md">some of the subjects we aim to cover here</a>.
+		</p>
+
+
+		Please reach out to us if this role sounds interesting to you.</p>
+      <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/ContactUs.png') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
+    </div>
+  </div>
+{% endblock content %}
